@@ -30,6 +30,13 @@ The input parameter must be a string, or the return value is null.
 - [x] Add test to greet.test.js
 - [x] Add method to greet.js
 - [x] Check that tests all pass and that coverage is 100%.
+- [x] Check that the build passed at https://travis-ci.com/ 
+- [x] Create pull request https://github.com/Kevinoh47/lab-01/pull/1
+
+### Time Estimates
+The basic work of setting up the branch and getting started for the first time using tests probably took two hours or less.
+
+Working through all the additional functionality, testing, and refactoring took another 3 hours.
 
 ========================================================
 ## Implementation
