@@ -1,6 +1,13 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) 01: Node Ecosystem
 ========================================================
+## Exported Module Values
+* Module arithmetic.js exports the following functions: 
+add, subtract, multiply, divide.
+* the three functions arithmetic.add, .subtract and .multiply require a single input parameter defined as an array, with two or more elements in the array, each of which must be a number. If there are more than elements in the array and all  elements are valid numbers, the operation will continue over all numbers in the input array.
+* The function arithmetic.divide requires two input parameters, each of which must be a number. The second input parameter should not be 0.  If the second input parameter is 0, null will be returned.
 
+========================================================
+========================================================
 ## Implementation
 * Setup the package.json file to run lint checks and tests against the greet and arithmetic modules
 * Create a file called `index.js` that requires both the greet and arithmetic modules.
