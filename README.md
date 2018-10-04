@@ -27,7 +27,6 @@ add, subtract, multiply, divide.
 - [x] Check that tests all pass and that coverage is 100%.
 
 ========================================================
-========================================================
 ## Implementation
 * Setup the package.json file to run lint checks and tests against the greet and arithmetic modules
 * Create a file called `index.js` that requires both the greet and arithmetic modules.
