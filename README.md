@@ -5,12 +5,17 @@
 * Module arithmetic.js exports the following functions: 
 add, subtract, multiply, divide.
 
-* the three functions arithmetic.add, .subtract and .multiply require a single input parameter defined as an array, with two or more elements in the array, each of which must be a number. If there are more than elements in the array and all  elements are valid numbers, the operation will continue over all numbers in the input array.
+The three functions add(), subtract() and multiply() require a single input parameter defined as an array, with two or more elements in the array, each of which must be a number. 
 
-* The function arithmetic.divide requires two input parameters, each of which must be a number. The second input parameter should not be 0.  If the second input parameter is 0, null will be returned.
+If there are more than two elements in the array and all elements are valid numbers, the operation will continue over all numbers in the input array.
+
+The function divide() requires two input parameters, each of which must be a number. The second input parameter should not be 0.  If the second input parameter is 0, null will be returned.
+
+* Module greet.js exports a single greet function, which takes a name string for input, concatenates the name to the end of "hello ", and returns the new string. 
+
+The input parameter must be a string, or the return value is null.
 
 ### Task List
-
 - [x] Initialize directory via npm init
 - [x] Include scripts directives in package.json
 - [x] Add faker via npm install faker
