@@ -7,7 +7,7 @@ let b = faker.random.number();
 
 describe ('Divide', () => {
   it('requires two params, both numerals', () => {
-    if(b === 0) b = 47;
+    if(b === 0) b = 47; // no dividing by zero in this test. 
     let expectedNumber = a / b;
     let result = arithmetic.divide(a, b);
     expect(result).toEqual(expectedNumber);
@@ -19,7 +19,7 @@ describe ('Divide', () => {
   });
 
   it('does not allow non-numeric values', () => {
-    let result = arithmetic.divide(a, 'seven');
+    let result = arithmetic.divide(a, '1');
     expect(result).toBeNull();
   });
 
@@ -30,8 +30,8 @@ describe ('Divide', () => {
 });
 
 describe ('Multiply', () => {
-  const inputArr = [a,b];
   it('requires an array holding at least two numbers', () => {
+    const inputArr = [a,b];
     let expectedNumber = a * b;
     let result = arithmetic.multiply(inputArr);
     expect(result).toEqual(expectedNumber);
