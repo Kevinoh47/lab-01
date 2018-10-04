@@ -30,26 +30,36 @@ describe ('Divide', () => {
 });
 
 describe ('Multiply', () => {
-  it('requires two params, both numerals', () => {
+  const inputArr = [a,b];
+  it('requires an array holding at least two numbers', () => {
     let expectedNumber = a * b;
-    let result = arithmetic.multiply(a, b);
+    let result = arithmetic.multiply(inputArr);
     expect(result).toEqual(expectedNumber);
   });
 
-  it('does not allow just one param', () => {
-    let result = arithmetic.multiply(a);
+  it('does not allow just one number in the input array', () => {
+    const inputArr = [a];
+    let result = arithmetic.multiply(inputArr);
     expect(result).toBeNull();
   });
 
-  it('does not allow non-numeric values', () => {
-    let result = arithmetic.multiply(a, 'seven');
+  it('does not allow non-numeric values in the input array', () => {
+    const inputArr = [a,b,'0','1'];
+    let result = arithmetic.multiply(inputArr);
     expect(result).toBeNull();
+  });
+
+  it('multiplies multiple numbers correctly', () => {
+    const inputArr = [a, b, b];
+    let expectedNumber = a * b * b;
+    let result = arithmetic.multiply(inputArr);
+    expect(result).toEqual(expectedNumber);
   });
 });
 
 describe('Addition', () => {
-  const inputArr = [a,b];
   it('requires an array holding at least two numbers', () => {
+    const inputArr = [a,b];
     let expectedNumber = a + b;
     let result = arithmetic.add(inputArr);
     expect(result).toEqual(expectedNumber);
@@ -66,11 +76,18 @@ describe('Addition', () => {
     let result = arithmetic.add(inputArr);
     expect(result).toBeNull();
   });
+
+  it('adds multiple numbers correctly', () => {
+    const inputArr = [a, b, b, a];
+    let expectedNumber = a + b + b + a;
+    let result = arithmetic.add(inputArr);
+    expect(result).toEqual(expectedNumber);
+  });
 });
 
 describe('Subtraction', () => {
-  const inputArr = [a,b];
   it('requires an array holding at least two numbers', () => {
+    const inputArr = [a,b];
     let expectedNumber = a - b;
     let result = arithmetic.subtract(inputArr);
     expect(result).toEqual(expectedNumber);

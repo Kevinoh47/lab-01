@@ -22,22 +22,22 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>25/25</span>
+        <span class='fraction'>29/29</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>25/25</span>
+        <span class='fraction'>29/29</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>7/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>21/21</span>
+        <span class='fraction'>25/25</span>
       </div>
     </div>
   </div>
@@ -88,25 +88,22 @@
 43
 44
 45
-46</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+46
+47
+48</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -122,8 +119,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -139,20 +143,15 @@ let arithmetic = module.exports = {};
 &nbsp;
 arithmetic.add = function(a) {
   if( a.constructor !== Array || a.length &lt; 2 ) { return null; }
-  let sum = a.reduce(function(total, current) {
+  let sum = a.reduce(function(accumulator, current) {
     if (typeof current !== 'number' || isNaN(current)) {
       return null;
     } else {
-      return total + current;
+      return accumulator + current;
     }
   }, 0);
   return sum;
 };
-&nbsp;
-// arithmetic.subtract = function (a,b) {
-//   if( typeof a !== 'number' || typeof b !== 'number' ) { return null; }
-//   return a-b;
-// };
 &nbsp;
 arithmetic.subtract = function(a) {
   if( a.constructor !== Array || a.length &lt; 2 ) { return null; }
@@ -162,13 +161,20 @@ arithmetic.subtract = function(a) {
     } else {
       return accumulator - current;
     }
-  }); // no initialValue provided, so reduce executes callback at index 1 rather than 0
+  }); // no initialValue provided, so reduce begins executing callback at index 1 rather than 0, allowing us to subtract from the initial value.
   return sub;
 };
 &nbsp;
-arithmetic.multiply = function(a,b) {
-  if( typeof a !== 'number' || typeof b !== 'number' ) { return null; }
-  return a*b;
+arithmetic.multiply = function(a) {
+  if( a.constructor !== Array || a.length &lt; 2 ) { return null; }
+  let multiplied = a.reduce(function(accumulator, current) {
+    if (typeof current !== 'number' || isNaN(current)) {
+      return null;
+    } else {
+      return accumulator * current;
+    }
+  }, 1); //accumulator needs to be 1 for multiplication
+  return multiplied;
 };
 &nbsp;
 arithmetic.divide = function(a,b) {
@@ -184,7 +190,7 @@ arithmetic.divide = function(a,b) {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 04 2018 10:59:35 GMT-0700 (Pacific Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 04 2018 11:58:09 GMT-0700 (Pacific Daylight Time)
 </div>
 </div>
 <script src="prettify.js"></script>
