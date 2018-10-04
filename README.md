@@ -1,10 +1,30 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) 01: Node Ecosystem
 ========================================================
 ## Exported Module Values
+
 * Module arithmetic.js exports the following functions: 
 add, subtract, multiply, divide.
+
 * the three functions arithmetic.add, .subtract and .multiply require a single input parameter defined as an array, with two or more elements in the array, each of which must be a number. If there are more than elements in the array and all  elements are valid numbers, the operation will continue over all numbers in the input array.
+
 * The function arithmetic.divide requires two input parameters, each of which must be a number. The second input parameter should not be 0.  If the second input parameter is 0, null will be returned.
+
+### Task List
+
+- [x] Initialize directory via npm init
+- [x] Include scripts directives in package.json
+- [x] Add faker via npm install faker
+- [x] Add jest via npm install --save-dev jest
+- [x] Add test files under __tests__ for modules arithmetic and greet
+- [x] Export each module via module.exports = {};
+- [x] Add methods to arithmetic module for multiply, divide
+- [x] Add tests to arithmetic.test.js
+- [x] Refactor add, subtract, and multiply to take an array input parameter
+- [x] Refactor tests as necessary
+- [x] Refactor methods to be more DRY and readable
+- [x] Add test to greet.test.js
+- [x] Add method to greet.js
+- [x] Check that tests all pass and that coverage is 100%.
 
 ========================================================
 ========================================================
