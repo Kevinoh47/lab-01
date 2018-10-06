@@ -1,6 +1,44 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) 01: Node Ecosystem
 ========================================================
+## Exported Module Values
 
+* Module arithmetic.js exports the following functions: 
+add, subtract, multiply, divide.
+
+The three functions add(), subtract() and multiply() require a single input parameter defined as an array, with two or more elements in the array, each of which must be a number. 
+
+If there are more than two elements in the array and all elements are valid numbers, the operation will continue over all numbers in the input array.
+
+The function divide() requires two input parameters, each of which must be a number. The second input parameter should not be 0.  If the second input parameter is 0, null will be returned.
+
+* Module greet.js exports a single greet function, which takes a name string for input, concatenates the name to the end of "hello ", and returns the new string. 
+
+The input parameter must be a string, or the return value is null.
+
+### Task List
+- [x] Initialize directory via npm init
+- [x] Include scripts directives in package.json
+- [x] Add faker via npm install faker
+- [x] Add jest via npm install --save-dev jest
+- [x] Add test files under __tests__ for modules arithmetic and greet
+- [x] Export each module via module.exports = {};
+- [x] Add methods to arithmetic module for multiply, divide
+- [x] Add tests to arithmetic.test.js
+- [x] Refactor add, subtract, and multiply to take an array input parameter
+- [x] Refactor tests as necessary
+- [x] Refactor methods to be more DRY and readable
+- [x] Add test to greet.test.js
+- [x] Add method to greet.js
+- [x] Check that tests all pass and that coverage is 100%.
+- [x] Check that the build passed at https://travis-ci.com/ 
+- [x] Create pull request https://github.com/Kevinoh47/lab-01/pull/1
+
+### Time Estimates
+The basic work of setting up the branch and getting started for the first time using tests probably took two hours or less.
+
+Working through all the additional functionality, testing, and refactoring took another 3 hours.
+
+========================================================
 ## Implementation
 * Setup the package.json file to run lint checks and tests against the greet and arithmetic modules
 * Create a file called `index.js` that requires both the greet and arithmetic modules.
